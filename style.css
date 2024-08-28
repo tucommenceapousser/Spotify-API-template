@@ -1,6 +1,11 @@
 :root {
-  --green: #1DB954;
-  --black: #191414;
+  --neon-green: #39ff14;
+  --neon-pink: #ff00ff;
+  --neon-blue: #00ffff;
+  --black: #000000;
+  --white: #ffffff;
+  --background-dark: #1a1a1a;
+  --background-light: #333333;
 }
 
 /*==========
@@ -9,11 +14,12 @@ Scrollbar styling
 
 ==========*/
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 ::-webkit-scrollbar-thumb {
-	border-radius: 5px;
-	background: var(--green);
+  border-radius: 6px;
+  background: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
 }
 
 /*==========
@@ -23,46 +29,55 @@ Main style
 ==========*/
 * {
   box-sizing: border-box;
+  font-family: 'Courier New', monospace;
 }
 body {
   margin: 0;
-  color: var(--black);
-  font-family: sans-serif;
+  color: var(--neon-green);
+  background-color: var(--background-dark);
 }
 h1 {
   display: block;
   text-align: center;
   margin: 50px auto;
   padding: 15px 0 50px 0;
-  width: 50%;
-  border-bottom: solid 5px var(--green);
+  width: 60%;
+  border-bottom: solid 5px var(--neon-pink);
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-pink);
 }
 .search, .params {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  padding: 10px;
+  padding: 15px;
   min-height: 100px;
   height: auto;
+  background: var(--background-light);
+  box-shadow: 0 0 15px var(--neon-green);
 }
 .search {
   width: 58vw;
   left: 1vw;
+  border-right: solid 2px var(--neon-pink);
 }
 .params {
-  border-left: solid 2px var(--black);
+  border-left: solid 2px var(--neon-pink);
   width: 40vw;
   position: sticky;
   top: 0px;
 }
 .search input {
   outline: none;
-  border: solid 2px var(--green);
-  border-radius: 100px;
+  border: solid 3px var(--neon-green);
+  border-radius: 10px;
   width: 90%;
   height: 50px;
   padding: 20px;
   font-size: 18px;
+  background-color: var(--background-dark);
+  color: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-pink);
 }
 .results {
   position: relative;
@@ -71,17 +86,21 @@ h1 {
   cursor: pointer;
 }
 .results div {
-  border: solid 2px var(--green);
+  border: solid 2px var(--neon-pink);
   border-radius: 20px;
   width: 90%;
   margin: 10px 0;
   padding: 10px;
+  background-color: var(--background-light);
+  color: var(--neon-blue);
+  box-shadow: 0 0 10px var(--neon-green);
 }
 .results div img {
   vertical-align: middle;
   height: 60px;
   border-radius: 10px;
   margin-right: 20px;
+  box-shadow: 0 0 10px var(--neon-pink);
 }
 .results label {
   font-size: 18px;
@@ -89,7 +108,7 @@ h1 {
 
 /*==========
 
-Style for the toogle switch
+Style for the toggle switch
 
 ==========*/
 .switch {
@@ -111,7 +130,8 @@ Style for the toogle switch
   left: 0;
   right: 0;
   bottom: 0;
-  background: #ccc;
+  background: var(--background-dark);
+  border: solid 2px var(--neon-green);
   transition: .1s;
 }
 .switch span:before {
@@ -121,21 +141,21 @@ Style for the toogle switch
   width: 40%;
   top: 10%;
   left: 5%;
-  bottom: 4px;
-  background: white;
+  background: var(--neon-green);
   transition: .4s;
 }
 input:checked + span {
-  background: var(--green);
+  background: var(--neon-pink);
 }
 input:checked + span:before {
   transform: translateX(120%);
 }
 .switch span {
-  border-radius: 100px;
+  border-radius: 50px;
 }
 .switch span:before {
   border-radius: 50%;
+  box-shadow: 0 0 10px var(--neon-green);
 }
 .switch + label {
   position: relative;
@@ -145,4 +165,19 @@ input:checked + span:before {
   left: 10px;
   font-size: 17px;
   vertical-align: middle;
+  color: var(--neon-blue);
+}
+.explanation, .messages {
+  margin: 20px auto;
+  padding: 15px;
+  width: 80%;
+  background-color: var(--background-light);
+  border: solid 2px var(--neon-pink);
+  border-radius: 10px;
+  color: var(--neon-blue);
+  box-shadow: 0 0 15px var(--neon-green);
+  text-align: center;
+}
+.explanation p, .messages p {
+  margin: 10px 0;
 }
